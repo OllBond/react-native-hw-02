@@ -55,10 +55,10 @@ const RegistrationScreen = () => {
             </TouchableOpacity>
           </View>
           <TouchableOpacity>
-            <Text style={styles.paragraph}>Уже есть аккаунт? Войти</Text>
+            <Text style={styles.textLink}>Уже есть аккаунт? Войти</Text>
           </TouchableOpacity>
           <Image
-            style={styles.imageAddPhoto}
+            style={styles.imageHomeIndicator}
             source={require("../assets/image/home-indicator.png")}
           />
         </View>
@@ -71,21 +71,21 @@ export default RegistrationScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
+  },
+  image: {
+    flex: 1,
+    justifyContent: "flex-end",
+    // alignItems: "center",
+    resizeMode: "cover",
   },
   imageBlack: {
     position: "absolute",
+    left: "-100%",
+    top: "-52%",
     width: 375,
     height: 44,
   },
-  // imageAddPhoto: {
-  //   position: "absolute",
-  //   left: "90%",
-  //   top: "65%",
-  //   width: 25,
-  //   height: 25,
-  // },
+
   title: {
     marginBottom: 33,
     fontFamily: "Roboto",
@@ -96,14 +96,7 @@ const styles = StyleSheet.create({
     letterSpacing: 0.01,
     color: "#212121",
   },
-  image: {
-    flex: 1,
-    justifyContent: "flex-end",
-    // alignItems: "center",
-    resizeMode: "cover",
-    // width: 375,
-    // height: 812,
-  },
+
   imageWrapper: {
     position: "absolute",
     left: "35%",
@@ -113,6 +106,13 @@ const styles = StyleSheet.create({
     backgroundColor: "#F6F6F6",
     borderRadius: 16,
   },
+  // imageAddPhoto: {
+  //   position: "absolute",
+  //   left: "90%",
+  //   top: "65%",
+  //   width: 25,
+  //   height: 25,
+  // },
   input: {
     padding: 16,
     marginTop: 16,
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
     color: "#212121",
     borderColor: "1px solid #E8E8E8",
     borderRadius: 8,
-    borderWidth: 1,
+    // borderWidth: 1,
   },
   wrapperForm: {
     paddingTop: 92,
@@ -140,31 +140,42 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     fontSize: 16,
     lineHeight: 19,
-    textAlign: "right",
     color: "#1B4371",
   },
   form: {
     marginHorizontal: 16,
   },
   button: {
+    justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "#FF6C00",
     height: 51,
     borderRadius: 100,
     marginTop: 43,
     marginBottom: 16,
   },
-  paragraph: {
+  btnTitle: {
+    color: "#FFFFFF",
+    fontWeight: "400",
+    fontSize: 16,
+    lineHeight: 19,
+  },
+  textLink: {
+    marginBottom: 66,
     fontWeight: "400",
     fontSize: 16,
     lineHeight: 19,
     textAlign: "center",
     color: "#1B4371",
   },
-  btnTitle: {
-    color: "#FFFFFF",
-    fontWeight: "400",
-    fontSize: 16,
-    lineHeight: 19,
-    textAlign: "center",
+  imageHomeIndicator: {
+    position: "absolute",
+    top: "118%",
+    left: "35%",
+    width: 134,
+    height: 5,
+    bottom: 8,
+    backgroundColor: "#212121",
+    borderRadius: 100,
   },
 });
