@@ -24,19 +24,24 @@ const RegistrationScreen = () => {
         >
           <View
             style={{
-              ...styles.wrapperForm,
-              paddingBottom: setIsShowKeyboard ? 20 : 45,
+              ...styles.form,
+              marginBottom: setIsShowKeyboard ? 0 : 44,
             }}
           >
             <View style={styles.imageWrapper}>
-              <Image
-                style={styles.imageBlack}
-                source={require("../assets/image/black.png")}
-              />
-              <Image
-                style={styles.imageAddPhoto}
-                source={require("../assets/image/add-photo.png")}
-              />
+              {/* <View style={styles.blackIcon}>
+                <Image
+                  style={styles.imageBlack}
+                  source={require("../assets/image/black.png")}
+                />
+              </View> */}
+              <View style={styles.imageAdd}>
+                <Image
+                  style={styles.imageAddPhoto}
+                  source={require("../assets/image/add.png")}
+                />
+              </View>
+              <Image source={require("../assets/image/add-photo.png")} />
             </View>
             <View style={styles.form}>
               <View>
@@ -88,6 +93,7 @@ export default RegistrationScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    // marginBottom: 0,
   },
   image: {
     flex: 1,
@@ -95,16 +101,9 @@ const styles = StyleSheet.create({
     // alignItems: "center",
     resizeMode: "cover",
   },
-  imageBlack: {
-    position: "absolute",
-    left: "-110%",
-    top: "-23%",
-    width: 375,
-    height: 44,
-  },
 
   title: {
-    marginBottom: 27,
+    marginBottom: 33,
     fontFamily: "Roboto",
     fontSize: 30,
     fontWeight: "500",
@@ -116,20 +115,32 @@ const styles = StyleSheet.create({
 
   imageWrapper: {
     position: "absolute",
-    left: "35%",
-    top: "-15%",
+    left: 150,
+    top: -65,
     width: 120,
     height: 120,
+    alignContent: "center",
     backgroundColor: "#F6F6F6",
     borderRadius: 16,
   },
-  // imageAddPhoto: {
-  //   position: "absolute",
-  //   left: "90%",
-  //   top: "65%",
-  //   width: 25,
-  //   height: 25,
-  // },
+  imageAdd: {
+    position: "absolute",
+    width: 25,
+    height: 25,
+    left: 100,
+    top: 80,
+    backgroundColor: `#FFFFFF`,
+    borderWidth: 1,
+    borderColor: `#FF6C00`,
+    borderRadius: 100,
+  },
+  imageAddPhoto: {
+    position: "absolute",
+    width: 16,
+    height: 16,
+    left: 4,
+    top: 4,
+  },
   input: {
     padding: 16,
     marginTop: 16,
@@ -143,12 +154,6 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     // borderWidth: 1,
   },
-  wrapperForm: {
-    paddingTop: 92,
-    backgroundColor: "#FFFFFF",
-    borderTopLeftRadius: 25,
-    borderTopRightRadius: 25,
-  },
   textShow: {
     position: "absolute",
     top: "50%",
@@ -160,7 +165,12 @@ const styles = StyleSheet.create({
     color: "#1B4371",
   },
   form: {
-    marginHorizontal: 16,
+    paddingTop: 60,
+    height: 549,
+    backgroundColor: "#FFFFFF",
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    paddingHorizontal: 16,
   },
   button: {
     justifyContent: "center",
@@ -178,7 +188,6 @@ const styles = StyleSheet.create({
     lineHeight: 19,
   },
   textLink: {
-    marginBottom: 62,
     fontWeight: "400",
     fontSize: 16,
     lineHeight: 19,
@@ -187,8 +196,8 @@ const styles = StyleSheet.create({
   },
   imageHomeIndicator: {
     position: "absolute",
-    top: "123%",
-    left: "35%",
+    top: 542,
+    left: 135,
     width: 134,
     height: 5,
     bottom: 8,
