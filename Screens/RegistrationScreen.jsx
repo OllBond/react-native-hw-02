@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   View,
   Text,
@@ -6,62 +7,78 @@ import {
   ImageBackground,
   Image,
   TouchableOpacity,
+  KeyboardAvoidingView,
+  Platform,
 } from "react-native";
 const RegistrationScreen = () => {
+  const [isShowKeyboard, setIsShowKeyboard] = useState(false);
+
   return (
     <View style={styles.container}>
       <ImageBackground
         style={styles.image}
         source={require("../assets/image/photo-bg.jpg")}
       >
-        <View style={styles.wrapperForm}>
-          <View style={styles.imageWrapper}>
-            <Image
-              style={styles.imageBlack}
-              source={require("../assets/image/black.png")}
-            />
-            <Image
-              style={styles.imageAddPhoto}
-              source={require("../assets/image/add-photo.png")}
-            />
-          </View>
-          <View style={styles.form}>
-            <View>
-              <Text style={styles.title}>Регистрация</Text>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+        >
+          <View
+            style={{
+              ...styles.wrapperForm,
+              paddingBottom: setIsShowKeyboard ? 20 : 45,
+            }}
+          >
+            <View style={styles.imageWrapper}>
+              <Image
+                style={styles.imageBlack}
+                source={require("../assets/image/black.png")}
+              />
+              <Image
+                style={styles.imageAddPhoto}
+                source={require("../assets/image/add-photo.png")}
+              />
             </View>
-            <View>
-              <TextInput
-                style={styles.input}
-                textAlign={"center"}
-                placeholder="Логин"
-              />
-              <TextInput
-                style={styles.input}
-                textAlign={"center"}
-                placeholder="Адрес электронной почты"
-              />
+            <View style={styles.form}>
+              <View>
+                <Text style={styles.title}>Регистрация</Text>
+              </View>
               <View>
                 <TextInput
+                  onFocus={() => setIsShowKeyboard(true)}
                   style={styles.input}
                   textAlign={"center"}
-                  placeholder="Пароль"
-                  secureTextEntry={true}
+                  placeholder="Логин"
                 />
-                <Text style={styles.textShow}>Показать</Text>
+                <TextInput
+                  onFocus={() => setIsShowKeyboard(true)}
+                  style={styles.input}
+                  textAlign={"center"}
+                  placeholder="Адрес электронной почты"
+                />
+                <View>
+                  <TextInput
+                    onFocus={() => setIsShowKeyboard(true)}
+                    style={styles.input}
+                    textAlign={"center"}
+                    placeholder="Пароль"
+                    secureTextEntry={true}
+                  />
+                  <Text style={styles.textShow}>Показать</Text>
+                </View>
               </View>
+              <TouchableOpacity activeOpacity={0.8} style={styles.button}>
+                <Text style={styles.btnTitle}>Зарегистрироваться</Text>
+              </TouchableOpacity>
             </View>
-            <TouchableOpacity activeOpacity={0.8} style={styles.button}>
-              <Text style={styles.btnTitle}>Зарегистрироваться</Text>
+            <TouchableOpacity>
+              <Text style={styles.textLink}>Уже есть аккаунт? Войти</Text>
             </TouchableOpacity>
+            <Image
+              style={styles.imageHomeIndicator}
+              source={require("../assets/image/home-indicator.png")}
+            />
           </View>
-          <TouchableOpacity>
-            <Text style={styles.textLink}>Уже есть аккаунт? Войти</Text>
-          </TouchableOpacity>
-          <Image
-            style={styles.imageHomeIndicator}
-            source={require("../assets/image/home-indicator.png")}
-          />
-        </View>
+        </KeyboardAvoidingView>
       </ImageBackground>
     </View>
   );
@@ -80,14 +97,14 @@ const styles = StyleSheet.create({
   },
   imageBlack: {
     position: "absolute",
-    left: "-100%",
-    top: "-52%",
+    left: "-110%",
+    top: "-23%",
     width: 375,
     height: 44,
   },
 
   title: {
-    marginBottom: 33,
+    marginBottom: 27,
     fontFamily: "Roboto",
     fontSize: 30,
     fontWeight: "500",
@@ -161,7 +178,7 @@ const styles = StyleSheet.create({
     lineHeight: 19,
   },
   textLink: {
-    marginBottom: 66,
+    marginBottom: 62,
     fontWeight: "400",
     fontSize: 16,
     lineHeight: 19,
@@ -170,7 +187,7 @@ const styles = StyleSheet.create({
   },
   imageHomeIndicator: {
     position: "absolute",
-    top: "118%",
+    top: "123%",
     left: "35%",
     width: 134,
     height: 5,
