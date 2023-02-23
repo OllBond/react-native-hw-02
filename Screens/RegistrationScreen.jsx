@@ -49,7 +49,7 @@ const RegistrationScreen = ({ navigation }) => {
   function keyboardHide() {
     setIsShowKeyboard(false);
     Keyboard.dismiss();
-    // console.log(state);
+    console.log(state);
     setState(initialState);
   }
   return (
