@@ -249,7 +249,7 @@ const styles = StyleSheet.create({
   },
   form: {
     paddingTop: 60,
-    height: 549,
+    // height: 549,
     backgroundColor: "#FFFFFF",
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,
