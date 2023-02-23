@@ -32,6 +32,7 @@ const RegistrationScreen = ({ navigation }) => {
     email: false,
     password: false,
   });
+
   const [fontsLoaded] = useFonts({
     "Roboto-Regular": require("../assets/fonts/Roboto-Regular.ttf"),
     "Roboto-Medium": require("../assets/fonts/Roboto-Medium.ttf"),
@@ -79,7 +80,7 @@ const RegistrationScreen = ({ navigation }) => {
                   style={{
                     paddingBottom:
                       isFocus.email || isFocus.password || isFocus.login
-                        ? 80
+                        ? 60
                         : 0,
                   }}
                 >
