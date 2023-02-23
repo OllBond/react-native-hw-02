@@ -187,7 +187,7 @@ const styles = StyleSheet.create({
 
   title: {
     marginBottom: 33,
-    fontFamily: "Roboto",
+    fontFamily: "Roboto-Medium",
     fontSize: 30,
     fontWeight: "500",
     textAlign: "center",
@@ -228,7 +228,7 @@ const styles = StyleSheet.create({
     padding: 16,
     marginTop: 16,
     height: 50,
-    fontFamily: "Roboto",
+    fontFamily: "Roboto-Regular",
     fontSize: 16,
     lineHeight: 19,
     backgroundColor: "#F6F6F6",
@@ -241,7 +241,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: "50%",
     left: "78%",
-    fontFamily: "Roboto",
+    fontFamily: "Roboto-Regular",
     fontWeight: "400",
     fontSize: 16,
     lineHeight: 19,
